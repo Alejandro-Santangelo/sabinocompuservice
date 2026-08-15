@@ -1,0 +1,7 @@
+.git
+.gitignore
+README.md
+run.bat
+Dockerfile
+.dockerignore
+render.yaml

@@ -1,0 +1,11 @@
+# ============================================================
+#  Render Blueprint — despliegue automático desde GitHub
+#  Cada push a la rama "main" dispara un nuevo deploy.
+# ============================================================
+
+services:
+  - type: web
+    name: sabino-compu-service
+    runtime: docker
+    plan: free
+    healthCheckPath: /
