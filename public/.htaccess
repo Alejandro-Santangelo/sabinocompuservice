@@ -1,0 +1,9 @@
+# SABINO COMPU SERVICE — Apache (opcional)
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Si el sitio se publica en la raíz de un hosting, dejar como está.
+    # Si se publica dentro de una subcarpeta, agregar: RewriteBase /nombre-carpeta/
+</IfModule>

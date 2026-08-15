@@ -1,0 +1,17 @@
+# ===== Sistema operativo =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Logs y temporales =====
+*.log
+*.tmp
+*.swp
+
+# ===== Editor =====
+.vscode/
+.idea/
+
+# ===== Dependencias (no usadas en este proyecto, por las dudas) =====
+vendor/
+node_modules/
