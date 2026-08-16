@@ -45,13 +45,13 @@ $TITLE = $page_title ?? $SITE['site_name'];   // Título de la pestaña
         }
         .logo h1 a, .logo p.site-title a { color: <?php echo esc($COL['site_title_color']); ?>; }
         .logo p.site-description      { color: <?php echo esc($COL['site_tagline_color']); ?>; }
-        .site-logo img                { width: 122px !important; height: 122px !important; border-radius: 50% !important; object-fit: cover; }
+        .site-logo img                { width: auto !important; height: 120px !important; max-width: 100%; border-radius: 0 !important; object-fit: contain; }
 
         /* ===== Layout del encabezado: logo + título en la misma línea, descripción debajo ===== */
         #header .logobx .logo {
             display: flex !important;
             align-items: center;
-            gap: 14px;
+            gap: 20px;
         }
         #header .logobx .site-logo { flex: 0 0 auto; }
         #header .logobx .site-branding {
@@ -70,12 +70,15 @@ $TITLE = $page_title ?? $SITE['site_name'];   // Título de la pestaña
         @media (max-width: 600px) {
             #header .logobx .logo { flex-direction: column; align-items: flex-start; }
             #header .logobx .site-title { white-space: normal; }
+            .site-logo img { height: 48px !important; }
+            #header .logobx .logo .site-title,
+            #header .logobx .logo .site-title a { font-size: 22px; }
         }
 
         /* Anchos del header en desktop (repetidos acá para evitar caché del CSS externo) */
         @media (min-width: 992px) {
-            #header .logobx_m { width: 42%; }
-            #header .m-mnu   { width: 44%; }
+            #header .logobx_m { width: 48%; }
+            #header .m-mnu   { width: 38%; }
         }
 
         #header .top-header           { background: <?php echo esc($COL['tophead_bg']); ?>; }
@@ -179,11 +182,45 @@ $TITLE = $page_title ?? $SITE['site_name'];   // Título de la pestaña
         .entry-content p {
             line-height: 1.7;
         }
-        /* Features: iconos y textos en blanco nítido */
-        #feature .icnbx i,
-        #feature .fea-conbx h1 {
+        /* Checklist de servicios: texto blanco nítido */
+        .service-card__list li {
             color: #ffffff !important;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+        }
+        /* Botones de servicio: celeste */
+        .service-btn--primary {
+            background: transparent !important;
+            color: #66c2ff !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+        }
+        .service-btn--primary:hover { color: #4fc3f7 !important; }
+        .service-back {
+            color: #ffffff !important;
+        }
+        .service-back:hover { color: #cccccc !important; }
+        .service-btn--wa {
+            background: transparent !important;
+            color: #25D366 !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+        }
+        .service-btn--wa:hover { color: #1ebc5a !important; }
+        .service-card__actions {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+        /* Features: iconos y textos en celeste con resalte */
+        #feature .icnbx i,
+        #feature .fea-conbx h1 {
+            color: #66c2ff !important;
+            text-shadow: 0 0 10px rgba(102, 194, 255, 0.6), 0 1px 3px rgba(0, 0, 0, 0.55);
+        }
+        #feature .single-fea-link:hover .icnbx i,
+        #feature .single-fea-link:hover .fea-conbx h1 {
+            color: #42b538 !important;
+            text-shadow: 0 0 10px rgba(66, 181, 56, 0.6), 0 1px 3px rgba(0, 0, 0, 0.55);
         }
         #feature .fea-conbx h1 {
             font-weight: 700 !important;

@@ -72,6 +72,17 @@ $email = $SITE['email'] ?? '';
     </div>
 </div>
 
+<!-- Lightbox: logo ampliado -->
+<div id="logo-lightbox" class="logo-lightbox" hidden aria-hidden="true">
+    <div class="logo-lightbox__backdrop js-logo-close" tabindex="-1"></div>
+    <div class="logo-lightbox__content">
+        <button type="button" class="logo-lightbox__close js-logo-close" aria-label="Cerrar">
+            <i class="fas fa-times"></i>
+        </button>
+        <img src="<?php echo esc($SITE['logo']); ?>" alt="<?php echo esc($SITE['site_name']); ?>">
+    </div>
+</div>
+
 <style>
 .contact-modal {
     position: fixed;
@@ -160,6 +171,53 @@ $email = $SITE['email'] ?? '';
 }
 .contact-modal__btn i { font-size: 20px; }
 body.contact-modal-open { overflow: hidden; }
+
+/* ===== Lightbox del logo ===== */
+.logo-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.logo-lightbox[hidden] { display: none; }
+.logo-lightbox__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+}
+.logo-lightbox__content {
+    position: relative;
+    z-index: 1;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+.logo-lightbox__content img {
+    display: block;
+    max-width: 90vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+}
+.logo-lightbox__close {
+    position: absolute;
+    top: -44px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+}
+.logo-lightbox__close:hover { background: rgba(255, 255, 255, 0.35); }
+body.logo-lightbox-open { overflow: hidden; }
 </style>
 
 <!-- Scripts -->
@@ -252,6 +310,40 @@ body.contact-modal-open { overflow: hidden; }
 
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && !modal.hidden) closeModal();
+    });
+})();
+</script>
+
+<script>
+(function () {
+    var lightbox = document.getElementById('logo-lightbox');
+    if (!lightbox) return;
+
+    function open() {
+        lightbox.hidden = false;
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('logo-lightbox-open');
+    }
+    function close() {
+        lightbox.hidden = true;
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('logo-lightbox-open');
+    }
+
+    document.addEventListener('click', function (e) {
+        var logoLink = e.target.closest('.site-logo a');
+        if (logoLink) {
+            e.preventDefault();
+            open();
+            return;
+        }
+        if (e.target.closest('.js-logo-close')) {
+            close();
+        }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !lightbox.hidden) close();
     });
 })();
 </script>

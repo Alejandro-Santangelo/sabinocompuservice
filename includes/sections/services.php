@@ -25,7 +25,7 @@ $SITE = site_config();
         <div class="ourservices-container">
             <div class="row m-0 p-0">
                 <?php foreach ($SITE['services'] as $service): ?>
-                    <div class="col-lg-4 col-md-6 col-sm-12 serbx">
+                    <div class="col-12 col-md-4 serbx">
                         <div class="ourservices-box">
                             <?php if (!empty($service['image'])): ?>
                                 <div class="imgbx">

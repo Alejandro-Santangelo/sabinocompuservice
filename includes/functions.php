@@ -35,3 +35,15 @@ function is_active_page($name)
     $file = basename($_SERVER['PHP_SELF'] ?? 'index.php');
     return $file === $name;
 }
+
+/** Devuelve el servicio de la franja de features según su slug. */
+function service_by_slug($slug)
+{
+    $features = site_config('features', []);
+    foreach ($features as $f) {
+        if (($f['slug'] ?? '') === $slug) {
+            return $f;
+        }
+    }
+    return null;
+}

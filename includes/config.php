@@ -58,7 +58,7 @@ return [
     // Tarjetas de servicios (se muestran 3). Editalas y agregá más.
     'services' => [
         [
-            'title'       => 'Diagnóstico, Reparación y Optimización de PC',
+            'title'       => 'Diagnóstico, Reparación y Optimización de PC - Notebook - Netbook',
             'description' => 'Diagnóstico, reparación y optimización de PC, Notebook y Netbook de todas las marcas.',
             'image'       => 'assets/img/fondo1.jpg',
             'badge1'      => 'Consultar Tiempos',
@@ -72,8 +72,8 @@ return [
             'badge2'      => 'Garantía',
         ],
         [
-            'title'       => 'Recuperación de Datos',
-            'description' => 'Recuperación de información de discos dañados y respaldo de tus archivos importantes.',
+            'title'       => 'Reemplazo de Sistemas Operativos',
+            'description' => 'Instalación, cambio y actualización de sistemas operativos (Windows, Linux y más). Dejamos tu equipo con un sistema limpio y listo para usar.',
             'image'       => 'assets/img/fondo3.jpg',
             'badge1'      => 'Consultar Tiempos',
             'badge2'      => 'Garantía',
@@ -81,23 +81,67 @@ return [
     ],
 
     /* ------------------- Franja de features --------------------- */
-    // Títulos e íconos de las 8 cajas (FontAwesome / Font Awesome 6).
+    // Títulos, íconos y páginas de las 4 cajas (FontAwesome / Font Awesome 6).
     'features' => [
-        ['icon' => 'fa-solid fa-desktop',             'title' => 'Reparación de PC'],
-        ['icon' => 'fas fa-volume-up',                'title' => 'Audio y Parlantes'],
-        ['icon' => 'fa-regular fa-hard-drive',        'title' => 'Discos y Datos'],
-        ['icon' => 'fa-solid fa-mobile-screen-button', 'title' => 'Reparación de Celulares'],
-        ['icon' => 'fa-solid fa-print',               'title' => 'Impresoras'],
-        ['icon' => 'fa-solid fa-laptop',              'title' => 'Notebooks y Netbooks'],
-        ['icon' => 'fa-solid fa-microchip',           'title' => 'Placas y Micros'],
-        ['icon' => 'fa-solid fa-monitor',             'title' => 'Monitores'],
+        [
+            'icon'       => 'fa-solid fa-desktop',
+            'title'      => 'Reparación de PC',
+            'slug'       => 'servicio-reparacion-pc',
+            'desc'       => 'Diagnóstico y reparación integral de computadoras de escritorio de todas las marcas. Detectamos la falla, reemplazamos los componentes dañados y dejamos tu equipo funcionando como nuevo.',
+            'highlights' => [
+                'Diagnóstico completo',
+                'Diagnóstico de placas y fuentes',
+                'Limpieza interna y cambio de pasta térmica',
+                'Optimización del sistema operativo',
+                'Garantía en repuestos y mano de obra',
+            ],
+        ],
+        [
+            'icon'       => 'fa-regular fa-hard-drive',
+            'title'      => 'Discos y Memorias',
+            'slug'       => 'servicio-discos-memorias',
+            'desc'       => 'Instalación y reemplazo de discos rígidos, SSD y memorias. Ampliamos el almacenamiento y mejoramos la velocidad y el rendimiento de tu equipo.',
+            'highlights' => [
+                'Instalación de discos rígidos y SSD',
+                'Ampliación de memoria RAM',
+                'Migración a discos de estado sólido',
+                'Memorias USB y tarjetas de almacenamiento',
+                'Garantía en componentes y mano de obra',
+            ],
+        ],
+        [
+            'icon'       => 'fa-solid fa-laptop',
+            'title'      => 'Notebooks y Netbooks',
+            'slug'       => 'servicio-notebooks-netbooks',
+            'desc'       => 'Reparación y mantenimiento integral de notebooks y netbooks de todas las marcas. Diagnóstico, servicio técnico y actualización de componentes para que tu equipo funcione como nuevo.',
+            'highlights' => [
+                'Reparación integral de notebooks y netbooks',
+                'Diagnóstico y detección de fallas',
+                'Mantenimiento y limpieza interna',
+                'Actualización de componentes',
+                'Servicio técnico con garantía',
+            ],
+        ],
+        [
+            'icon'       => 'fa-solid fa-arrows-rotate',
+            'title'      => 'Cambio o Reemplazo de Sistemas Operativos',
+            'slug'       => 'servicio-sistemas-operativos',
+            'desc'       => 'Instalación, cambio y actualización de sistemas operativos (Windows, Linux y más). Dejamos tu equipo con un sistema limpio, actualizado y listo para usar.',
+            'highlights' => [
+                'Instalación de Windows y Linux',
+                'Actualización y migración de SO',
+                'Instalación de drivers y programas',
+                'Respaldo de datos antes del cambio',
+                'Activación y configuración completa',
+            ],
+        ],
     ],
 
     /* --------------------------- Estilos ------------------------ */
     // Colores guardados en el customizer del sitio original.
     'colors' => [
         'site_title_color'      => '#ffffff',
-        'site_tagline_color'    => '#1a7aa3',
+        'site_tagline_color'    => '#66c2ff',
         'tophead_bg'            => '#97abbf',
         'tophead_icon_bg'       => '#42b538',
         'tophead_icon_text'     => '#ffffff',
