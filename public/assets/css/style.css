@@ -2661,7 +2661,7 @@ nav.post-navigation{
   #header .logobx_m {width: 54%;}
   #header .m-mnu {width: 10%;}
   #header .m-btn { width: 36%; }
-  #header .bttn2 { font-size: 12px; padding: 10px 11px; border-radius: 8px; }
+  #header .bttn2 { font-size: 11px; padding: 8px 10px; border-radius: 8px; white-space: nowrap; line-height: 1.2; }
   #header .bttn2 i{display: none;}
   #slider .slider-content h2 { font-size: 54px;}
   #slider .slider-content p { font-size: 16px; margin: 0.1em 0;}

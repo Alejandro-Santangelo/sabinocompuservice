@@ -27,7 +27,7 @@ return [
     'timing'           => 'Lunes a Sábado : De 8:00 a 20:00 Hs.',
 
     /* ------------------------ Botón CTA ------------------------- */
-    'header_btn_text'  => 'Contactar / Solicitar Presupuesto',
+    'header_btn_text'  => 'Contactar',
     'header_btn_link'  => '#contactar',
 
     /* --------------------- Redes sociales ----------------------- */
